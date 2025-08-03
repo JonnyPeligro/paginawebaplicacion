@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursos Educativos - PIAR y DUA</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2980b9;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333;
+            --white: #fff;
+            --border-radius: 5px;
+            --box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-gray);
+            color: var(--dark-gray);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        /* Estilos para el formulario */
+        .form-container {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+        
+        /* Estilos para las opciones PIAR/DUA */
+        .options-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .option-card {
+            width: 48%;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        
+        .option-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .piar-card {
+            background: #e3f2fd;
+            border: 2px solid #bbdefb;
+        }
+        
+        .dua-card {
+            background: #fce4ec;
+            border: 2px solid #f8bbd0;
+        }
+        
+        /* Estilos para las secciones de materiales */
+        .material-card {
+            background: var(--white);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .back-btn {
+            background: #95a5a6;
+            margin-bottom: 20px;
+        }
+        
+        /* Estilos para botones */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .option-card {
+                width: 100%;
+            }
+            
+            .form-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Recursos para Docentes - PIAR y DUA</h1>
+        </div>
+    </header>
+    
+    <main class="container">
+        <!-- Formulario de registro -->
+        <section id="registro">
+            <div class="form-container">
+                <h2>Registro para acceder a los recursos</h2>
+                <form id="registroForm">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cc">Cédula de Ciudadanía:</label>
+                        <input type="text" id="cc" name="cc" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="telefono">Número de teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="correo">Correo electrónico:</label>
+                        <input type="email" id="correo" name="correo" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cargo">Cargo:</label>
+                        <input type="text" id="cargo" name="cargo" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="institucion">Institución educativa:</label>
+                        <input type="text" id="institucion" name="institucion" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="btn">Continuar</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Sección de opciones (PIAR o DUA) -->
+        <section id="opciones-section" class="hidden">
+            <div class="form-container">
+                <h2>Seleccione el recurso que necesita</h2>
+                
+                <div class="options-container">
+                    <div class="option-card piar-card" id="piar-btn">
+                        <h3>PIAR</h3>
+                        <p>Plan Individual de Ajustes Razonables</p>
+                        <button class="btn">Ver cartillas PIAR</button>
+                    </div>
+                    
+                    <div class="option-card dua-card" id="dua-btn">
+                        <h3>DUA</h3>
+                        <p>Diseño Universal para el Aprendizaje</p>
+                        <button class="btn">Ver cartillas DUA</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de materiales PIAR -->
+        <section id="piar-section" class="hidden">
+            <div class="form-container">
+                <button id="back-piar" class="btn back-btn">← Volver a las opciones</button>
+                <h2>Cartillas de apoyo - PIAR</h2>
+                
+                <div class="material-card">
+                    <h3>1. Guía para la elaboración de PIAR</h3>
+                    <p>Pasos detallados para crear un Plan Individual de Ajustes Razonables:</p>
+                    <ul>
+                        <li>Identificación de necesidades del estudiante</li>
+                        <li>Elaboración de ajustes razonables</li>
+                        <li>Participación de la familia y profesionales</li>
+                        <li>Implementación en el aula</li>
+                    </ul>
+                    <a href="#" class="btn">Descargar guía completa</a>
+                </div>
+                
+                <div class="material-card">
+                    <h3>2. Ejemplos de ajustes razonables</h3>
+                    <p>Casos prácticos y adaptaciones comunes para diferentes discapacidades:</p>
+                    <ul>
+                        <li>Adaptaciones para discapacidad visual</li>
+                        <li>Adaptaciones para discapacidad auditiva</li>
+                        <li>Adaptaciones para discapacidad motora</li>
+                        <li>Adaptaciones para discapacidad cognitiva</li>
+                    </ul>
+                    <a href="#" class="btn">Ver ejemplos</a>
+                </div>
+                
+                <div class="material-card">
+                    <h3>3. Evaluación y seguimiento</h3>
+                    <p>Instrumentos para evaluar el progreso del estudiante:</p>
+                    <ul>
+                        <li>Formatos de seguimiento</li>
+                        <li>Indicadores de evaluación</li>
+                        <li>Reuniones de revisión</li>
+                        <li>Ajustes al plan según resultados</li>
+                    </ul>
+                    <a href="#" class="btn">Descargar formatos</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de materiales DUA -->
+        <section id="dua-section" class="hidden">
+            <div class="form-container">
+                <button id="back-dua" class="btn back-btn">← Volver a las opciones</button>
+                <h2>Cartillas de apoyo - DUA</h2>
+                
+                <div class="material-card">
+                    <h3>1. Principios del DUA</h3>
+                    <p>Explicación de los tres principios fundamentales del Diseño Universal para el Aprendizaje:</p>
+                    <ol>
+                        <li>Proporcionar múltiples formas de representación</li>
+                        <li>Proporcionar múltiples formas de acción y expresión</li>
+                        <li>Proporcionar múltiples formas de implicación</li>
+                    </ol>
+                    <a href="#" class="btn">Descargar explicación completa</a>
+                </div>
+                
+                <div class="material-card">
+                    <h3>2. Estrategias de implementación</h3>
+                    <p>Cómo aplicar el DUA en la planificación de clases y materiales didácticos:</p>
+                    <ul>
+                        <li>Diseño de actividades inclusivas</li>
+                        <li>Selección de materiales accesibles</li>
+                        <li>Evaluación diferenciada</li>
+                        <li>Tecnologías de apoyo</li>
+                    </ul>
+                    <a href="#" class="btn">Ver estrategias</a>
+                </div>
+                
+                <div class="material-card">
+                    <h3>3. Herramientas y recursos</h3>
+                    <p>Listado de tecnologías y materiales que facilitan la aplicación del DUA:</p>
+                    <ul>
+                        <li>Software para creación de materiales accesibles</li>
+                        <li>Plataformas educativas inclusivas</li>
+                        <li>Recursos multimedia</li>
+                        <li>Bibliografía recomendada</li>
+                    </ul>
+                    <a href="#" class="btn">Acceder a recursos</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>Sistema de Recursos Educativos - PIAR y DUA</p>
+            <p>© 2025 Todos los derechos reservados (educativo)</p>
+        </div>
+    </footer>
+
+    <script>
+        // Manejo del formulario de registro
+        document.getElementById('registroForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validar campos requeridos
+            const camposRequeridos = ['nombre', 'cc', 'telefono', 'correo', 'cargo', 'institucion'];
+            let valido = true;
+            
+            camposRequeridos.forEach(function(campo) {
+                if (!document.getElementById(campo).value) {
+                    valido = false;
+                    document.getElementById(campo).style.borderColor = 'red';
+                } else {
+                    document.getElementById(campo).style.borderColor = '#ddd';
+                }
+            });
+            
+            if (!valido) {
+                alert('Por favor complete todos los campos requeridos.');
+                return;
+            }
+            
+            // Obtener datos del formulario
+            const userData = {
+                nombre: document.getElementById('nombre').value,
+                cc: document.getElementById('cc').value,
+                telefono: document.getElementById('telefono').value,
+                correo: document.getElementById('correo').value,
+                cargo: document.getElementById('cargo').value,
+                institucion: document.getElementById('institucion').value,
+                fechaRegistro: new Date().toISOString()
+            };
+            
+            // Guardar en localStorage
+            localStorage.setItem('userData', JSON.stringify(userData));
+            
+            // Mostrar sección de opciones y ocultar formulario
+            document.getElementById('registro').classList.add('hidden');
+            document.getElementById('opciones-section').classList.remove('hidden');
+            
+            // Desplazarse a la sección de opciones
+            document.getElementById('opciones-section').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Manejo de los botones de opciones
+        document.getElementById('piar-btn').addEventListener('click', function() {
+            document.getElementById('opciones-section').classList.add('hidden');
+            document.getElementById('piar-section').classList.remove('hidden');
+            document.getElementById('piar-section').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        document.getElementById('dua-btn').addEventListener('click', function() {
+            document.getElementById('opciones-section').classList.add('hidden');
+            document.getElementById('dua-section').classList.remove('hidden');
+            document.getElementById('dua-section').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Botones para volver atrás
+        document.getElementById('back-piar').addEventListener('click', function() {
+            document.getElementById('piar-section').classList.add('hidden');
+            document.getElementById('opciones-section').classList.remove('hidden');
+            document.getElementById('opciones-section').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        document.getElementById('back-dua').addEventListener('click', function() {
+            document.getElementById('dua-section').classList.add('hidden');
+            document.getElementById('opciones-section').classList.remove('hidden');
+            document.getElementById('opciones-section').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
